@@ -1,0 +1,9 @@
+.idea/
+vendor/
+.cache/
+.logs/
+
+.phpunit.result.cache
+
+.DS_Store
+*.pem
