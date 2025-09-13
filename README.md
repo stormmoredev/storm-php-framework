@@ -1,5 +1,3 @@
----
-
 # ⚡ StormPHP Framework
 
 Built with love to deliver joy and satisfaction with every piece of code you write.
