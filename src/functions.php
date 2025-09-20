@@ -136,6 +136,7 @@ function redirect(string $url = "/", string|bool $success = false, string|bool $
     if ($failure) {
         $response->messages->add("failure", $failure);
     }
+    $response->code = 302;
     return new Redirect($url);
 }
 

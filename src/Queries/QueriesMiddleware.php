@@ -3,6 +3,7 @@
 namespace Stormmore\Framework\Queries;
 
 use closure;
+use Throwable;
 use Exception;
 use Stormmore\Framework\App\IMiddleware;
 use Stormmore\Framework\Configuration\Configuration;
@@ -34,6 +35,7 @@ readonly class QueriesMiddleware implements IMiddleware
         $connection = ConnectionFactory::createFromString($connectionString, $user, $password);
 
         $queries = new StormQueries($connection);
+
 
         $this->container->registerAs($connection, 'Stormmore\Queries\IConnection');
         $this->container->register($queries);

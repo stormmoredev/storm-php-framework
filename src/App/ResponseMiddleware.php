@@ -42,19 +42,19 @@ readonly class ResponseMiddleware implements IMiddleware
                 echo $content;
             }
         } else {
+            http_response_code($this->response->code);
             foreach ($this->response->getCookies()->getSetCookies() as $cookie) {
                 setcookie($cookie->getName(), $cookie->getValue(), $cookie->getExpires(), $cookie->getPath());
             }
             foreach ($this->response->getCookies()->getUnsetCookies() as $cookieName) {
                 setcookie($cookieName, '', -1, '/');
             }
+            foreach ($this->response->headers as $name => $value) {
+                header("$name: $value");
+            }
             if ($this->response->location) {
                 header("Location: {$this->response->location}");
                 die;
-            }
-            http_response_code($this->response->code);
-            foreach ($this->response->headers as $name => $value) {
-                header("$name: $value");
             }
             echo $this->response->body;
         }
