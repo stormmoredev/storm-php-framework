@@ -247,6 +247,3 @@ StormPHP is designed to feel natural and intuitive, but you can explore more in-
 
 StormPHP is open-source under the [MIT License](LICENSE).
 
----
-
-👉 Teraz pytanie do Ciebie: chcesz żebym przygotował od razu **wersję Markdown z gotowymi badge’ami (build, PHP version, Packagist, license)** do wklejenia na GitHuba?
